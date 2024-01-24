@@ -1,5 +1,8 @@
 # Steadefi Contracts
 
+![Steadefi](https://github.com/steadefi/steadefi-contracts/raw/main/files/steadefi-logo.png)
+
+
 # About
 Steadefi provides vaults with automated risk management for earning leveraged yields effectively and passively in bull, crab and bear markets. With lending and leveraged delta long and neutral stategies, Steadefi's vaults cater to different risk/reward strategies to the best yield-generating DeFi protocols.
 
