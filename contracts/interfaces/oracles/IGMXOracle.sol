@@ -74,4 +74,8 @@ interface IGMXOracle {
     bool isDeposit,
     bool maximize
   ) external view returns (uint256);
+
+  function updateDataStore(address newDataStore) external;
+  function updateSyntheticReader(address newSyntheticReader) external;
+  function updateChainlinkOracle(address newChainlinkOracle) external;
 }

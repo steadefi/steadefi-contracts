@@ -7,19 +7,24 @@ library Errors {
 
   error OnlyKeeperAllowed();
   error OnlyVaultAllowed();
+  error OnlyCallbackAllowed();
   error OnlyBorrowerAllowed();
+  error OnlyYieldBoosterAllowed();
+  error OnlyMinterAllowed();
+  error OnlyTokenManagerAllowed();
 
   /* ======================== GENERAL ======================== */
 
   error ZeroAddressNotAllowed();
   error TokenDecimalsMustBeLessThan18();
+  error ReceiverNotApproved();
+  error ExternalCallFailed();
 
   /* ========================= ORACLE ======================== */
 
   error NoTokenPriceFeedAvailable();
   error FrozenTokenPriceFeed();
   error BrokenTokenPriceFeed();
-  error TokenPriceFeedAlreadySet();
   error TokenPriceFeedMaxDelayMustBeGreaterOrEqualToZero();
   error TokenPriceFeedMaxDeviationMustBeGreaterOrEqualToZero();
   error InvalidTokenInLPPool();
@@ -36,38 +41,46 @@ library Errors {
   error BorrowerAlreadyRevoked();
   error InsufficientLendingLiquidity();
   error InsufficientAssetsBalance();
+  error InvalidInterestRateModel();
   error InterestRateModelExceeded();
+  error ApprovedBorrowersExceededMaximum();
+  error PerformanceFeeExceeded();
+  error ApproveBorrowerFailure();
+  error RevokeBorrowerFailure();
 
   /* ===================== VAULT GENERAL ===================== */
 
   error InvalidExecutionFeeAmount();
   error InsufficientExecutionFeeAmount();
-  error InsufficientSlippageAmount();
+  error InsufficientVaultSlippageAmount();
   error NotAllowedInCurrentVaultStatus();
+  error AddressNotAllowed();
 
   /* ===================== VAULT DEPOSIT ===================== */
 
   error EmptyDepositAmount();
   error InvalidDepositToken();
   error InsufficientDepositAmount();
+  error InsufficientDepositValue();
+  error ExcessiveDepositValue();
   error InvalidNativeDepositAmountValue();
   error InsufficientSharesMinted();
   error InsufficientCapacity();
   error OnlyNonNativeDepositToken();
   error InvalidNativeTokenAddress();
+  error DepositNotAllowedWhenEquityIsZero();
   error DepositAndExecutionFeeDoesNotMatchMsgValue();
-  error DepositCancellationCallback();
 
   /* ===================== VAULT WITHDRAW ==================== */
 
   error EmptyWithdrawAmount();
   error InvalidWithdrawToken();
   error InsufficientWithdrawAmount();
+  error ExcessiveWithdrawValue();
   error InsufficientWithdrawBalance();
   error InvalidEquityAfterWithdraw();
   error InsufficientAssetsReceived();
   error WithdrawNotAllowedInSameDepositBlock();
-  error WithdrawalCancellationCallback();
   error NoAssetsToEmergencyRefund();
 
   /* ==================== VAULT REBALANCE ==================== */
@@ -82,4 +95,50 @@ library Errors {
   /* ==================== VAULT CALLBACKS ==================== */
 
   error InvalidCallbackHandler();
+  error DepositExecutionUnmatchedCallback();
+  error DepositCancellationUnmatchedCallback();
+  error WithdrawalExecutionUnmatchedCallback();
+  error WithdrawalCancellationUnmatchedCallback();
+  error OrderExecutionUnmatchedCallback();
+  error OrderCancellationUnmatchedCallback();
+  error OrderFrozenUnmatchedCallback();
+
+  /* ========================= FARMS ========================== */
+
+  error FarmDoesNotExist();
+  error FarmNotActive();
+  error EndTimeMustBeGreaterThanCurrentTime();
+  error MaxMultiplierMustBeGreaterThan1x();
+  error InsufficientRewardsBalance();
+  error InvalidRate();
+  error InvalidEsSDYSplit();
+
+  /* ========================= TOKENS ========================= */
+
+  error RedeemEntryDoesNotExist();
+  error InvalidRedeemAmount();
+  error InvalidRedeemDuration();
+  error VestingPeriodNotOver();
+  error InvalidAmount();
+  error UnauthorisedAllocateAmount();
+  error InvalidRatioValues();
+  error DeallocationFeeTooHigh();
+  error TransferNotAllowed();
+  error InvalidUpdateTransferWhitelistAddress();
+
+  /* ========================= BRIDGE ========================= */
+
+  error OnlyNetworkAllowed();
+  error InvalidFeeToken();
+  error InsufficientFeeTokenBalance();
+
+  /* ========================= CLAIMS ========================= */
+
+  error AddressAlreadyClaimed();
+  error MerkleVerificationFailed();
+  error EpochNotFound();
+
+  /* ========================= DISITRBUTOR ========================= */
+
+  error InvalidNumberOfVaults();
 }

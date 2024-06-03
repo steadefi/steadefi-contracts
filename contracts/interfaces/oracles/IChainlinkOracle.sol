@@ -6,7 +6,7 @@ interface IChainlinkOracle {
   function consultIn18Decimals(address token) external view returns (uint256 price);
   function addTokenPriceFeed(address token, address feed) external;
   function addTokenMaxDelay(address token, uint256 maxDelay) external;
-  function addTokenMaxDeviation(address token, uint256 maxDeviation) external;
+  function updateTokenToDenominatorToken(address token, address dt) external;
   function emergencyPause() external;
   function emergencyResume() external;
 }
